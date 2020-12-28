@@ -6,6 +6,7 @@
     "deskbookers-calendar": "^0.16.4",
     "moment": "^2.18.1",
     "react": "^15.5.3",
+    "react-big-calendar": "^0.30.0",
     "react-dom": "^15.5.3"
   },
   "devDependencies": {

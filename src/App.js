@@ -80,26 +80,26 @@ class App extends Component {
         {
           title: "Book",
           resourceId: "1",
-          start: new Date(2015, 3, 1, 5, 30, 0, 0),
-          end: new Date(2015, 3, 1, 10, 30, 0, 0),
+          start: new Date(2015, 3, 1, 5, 0, 0, 0),
+          end: new Date(2015, 3, 1, 10, 0, 0, 0),
         },
         {
           title: "Block",
           resourceId: "2",
-          start: new Date(2015, 3, 1, 2, 30, 0, 0),
-          end: new Date(2015, 3, 1, 4, 30, 0, 0),
+          start: new Date(2015, 3, 1, 2, 0, 0, 0),
+          end: new Date(2015, 3, 1, 4, 0, 0, 0),
         },
         {
           title: "Cancelled",
           resourceId: "2",
-          start: new Date(2015, 3, 1, 4, 30, 0, 0),
-          end: new Date(2015, 3, 1, 6, 30, 0, 0),
+          start: new Date(2015, 3, 1, 4, 0, 0, 0),
+          end: new Date(2015, 3, 1, 6, 0, 0, 0),
         },
         {
           title: "Pending",
           resourceId: "3",
-          start: new Date(2015, 3, 1, 3, 30, 0, 0),
-          end: new Date(2015, 3, 1, 6, 30, 0, 0),
+          start: new Date(2015, 3, 1, 3, 0, 0, 0),
+          end: new Date(2015, 3, 1, 6, 0, 0, 0),
         },
       ],
     };
@@ -110,10 +110,10 @@ class App extends Component {
       title: "Book",
       resourceId: slotInfo.resourceId,
       start: slotInfo.start,
-      end: slotInfo.end,
+      // end: slotInfo.end,
+      end: moment(slotInfo.end).add(30, "m").toDate(), //add 30mins extra
     };
     prevState.push(newObj);
-    console.log(newObj, "newObjnewObj", prevState);
     this.setState({
       events: prevState,
     });
